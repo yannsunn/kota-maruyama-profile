@@ -191,7 +191,7 @@ export default function Home() {
                 className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
                 {...fadeInUp}
               >
-                <span className="text-sm font-medium">👋 Hello, I'm</span>
+                <span className="text-sm font-medium">👋 Hello, I&apos;m</span>
               </motion.div>
               
               <motion.h1 
