@@ -214,17 +214,9 @@ export default function Home() {
                 {...fadeInUp}
                 transition={{ delay: 0.1 }}
               >
-                丸山{' '}
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  康太
+                  まるやまこうた
                 </span>
-                <motion.span 
-                  className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
-                  {...fadeInUp}
-                  transition={{ delay: 0.2 }}
-                >
-                  (こうた)
-                </motion.span>
               </motion.h1>
               
               <motion.div 
