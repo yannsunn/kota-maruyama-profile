@@ -241,14 +241,14 @@ export default function Home() {
                 transition={{ delay: 0.5 }}
               >
                 <a 
-                  href="https://www.instagram.com/uratoku_gourmet" 
+                  href="https://www.instagram.com/marukou0722/" 
                   target="_blank"
                   className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
                 >
                   <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-left">
                     <p className="font-semibold text-sm">Instagram</p>
-                    <p className="text-xs opacity-80">グルメアカウント</p>
+                    <p className="text-xs opacity-80">@marukou0722</p>
                   </div>
                 </a>
                 <a 
@@ -405,7 +405,7 @@ export default function Home() {
               },
               {
                 title: '③ 飲食マーケティング・コンサル',
-                description: '飲食店の「0→1」立ち上げから、「1→100」の売上最大化までを支援。Instagram：@uratoku_gourmet',
+                description: '飲食店の「0→1」立ち上げから、「1→100」の売上最大化までを支援。自身の4,000名規模の人脈リストを活用したリアル集客。',
                 gradient: 'from-blue-400 to-cyan-500'
               }
             ].map((business, index) => (
@@ -567,7 +567,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <motion.a 
-              href="https://www.instagram.com/uratoku_gourmet"
+              href="https://www.instagram.com/marukou0722/"
               target="_blank"
               className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group"
               variants={fadeInUp}
@@ -575,7 +575,7 @@ export default function Home() {
               <Instagram className="text-white group-hover:scale-110 transition-transform duration-300" size={24} />
               <div className="text-left">
                 <p className="text-white font-semibold">Instagram</p>
-                <p className="text-white/80 text-sm">@uratoku_gourmet</p>
+                <p className="text-white/80 text-sm">@marukou0722</p>
               </div>
             </motion.a>
             
