@@ -81,14 +81,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Dynamic gradient background with mesh pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-pink-500/20 to-cyan-500/20"></div>
-        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-pink-600/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-600/20 via-transparent to-transparent"></div>
         
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
-            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-white/10 to-white/5 rounded-full blur-3xl"
+            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-full blur-3xl"
             animate={{ 
               x: [0, 50, 0], 
               y: [0, -30, 0],
@@ -101,7 +101,7 @@ export default function Home() {
             }}
           />
           <motion.div 
-            className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-white/10 to-white/5 rounded-full blur-3xl"
+            className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-cyan-500/5 rounded-full blur-3xl"
             animate={{ 
               x: [0, -30, 0], 
               y: [0, 40, 0],
@@ -112,6 +112,17 @@ export default function Home() {
               repeat: Infinity, 
               ease: "easeInOut",
               delay: 2
+            }}
+          />
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-500/5 via-transparent to-blue-500/5 rounded-full blur-3xl"
+            animate={{ 
+              rotate: [0, 360]
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity, 
+              ease: "linear"
             }}
           />
         </div>
