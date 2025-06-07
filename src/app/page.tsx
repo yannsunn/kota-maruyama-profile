@@ -605,6 +605,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800"
+            {...fadeInUp}
+          >
+            アクセス
+          </motion.h2>
+          
+          <motion.p 
+            className="text-xl text-gray-600 text-center mb-12"
+            {...fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
+            おばんざいさくら
+          </motion.p>
+
+          <motion.div 
+            className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            {...fadeInUp}
+            transition={{ delay: 0.3 }}
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12960.230988679558!2d139.70190681525644!3d35.70047038018926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzAxLjciTiAxMznCsDQyJzA2LjkiRQ!5e0!3m2!1sja!2sjp!4v1639999999999!5m2!1sja!2sjp"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+              title="おばんざいさくら地図"
+            ></iframe>
+          </motion.div>
+
+          <motion.div 
+            className="mt-8 text-center"
+            {...fadeInUp}
+            transition={{ delay: 0.4 }}
+          >
+            <a 
+              href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
+              target="_blank"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 group"
+            >
+              <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span>Google マップで開く</span>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 px-4 bg-gray-900 text-center">
         <p className="text-gray-400">
