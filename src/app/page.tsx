@@ -202,12 +202,6 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.div
-                className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
-                {...fadeInUp}
-              >
-                <span className="text-sm font-medium">👋 Hello, I&apos;m</span>
-              </motion.div>
               
               <motion.h1 
                 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight text-white"
