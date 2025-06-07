@@ -615,13 +615,17 @@ export default function Home() {
             アクセス
           </motion.h2>
           
-          <motion.p 
-            className="text-xl text-gray-600 text-center mb-12"
+          <motion.div 
+            className="text-center mb-12 space-y-4"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            おばんざいさくら
-          </motion.p>
+            <h3 className="text-2xl font-bold text-gray-800">おばんざいさくら</h3>
+            <div className="space-y-2 text-gray-600">
+              <p>〒160-0022 東京都新宿区新宿３丁目８−２ クロスビル B1階</p>
+              <p>TEL: <a href="tel:0359258182" className="text-blue-600 hover:underline">03-5925-8182</a></p>
+            </div>
+          </motion.div>
 
           <motion.div 
             className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
@@ -629,7 +633,7 @@ export default function Home() {
             transition={{ delay: 0.3 }}
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12960.230988679558!2d139.70190681525644!3d35.70047038018926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzAxLjciTiAxMznCsDQyJzA2LjkiRQ!5e0!3m2!1sja!2sjp!4v1639999999999!5m2!1sja!2sjp"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.557028838397!2d139.70190681525644!3d35.687900080192264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd5d6b6aa8d%3A0x6c63d989f4d8a4a2!2z44CSMTY2LTAwMjIg5p2x5Lqs6YO95paw5a6_5Yy65paw5a6_77yT5LiB55uu77yY4oiS77ySIOOCr-ODreOCueODk-ODqyBCMQ!5e0!3m2!1sja!2sjp!4v1639999999999!5m2!1sja!2sjp"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -642,9 +646,37 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="mt-8 text-center"
+            className="mt-8 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
+          >
+            <div className="bg-gray-50 p-6 rounded-2xl">
+              <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <Calendar size={20} className="text-blue-600" />
+                営業時間
+              </h4>
+              <div className="space-y-2 text-gray-600">
+                <p>月〜土: 17:00〜24:00</p>
+                <p>日・祝: 定休日</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-2xl">
+              <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <Briefcase size={20} className="text-blue-600" />
+                アクセス
+              </h4>
+              <div className="space-y-2 text-gray-600">
+                <p>JR新宿駅 東口・南口 徒歩3分</p>
+                <p>新宿三丁目駅 徒歩1分</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="mt-6 text-center"
+            {...fadeInUp}
+            transition={{ delay: 0.5 }}
           >
             <a 
               href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
