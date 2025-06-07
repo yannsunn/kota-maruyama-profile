@@ -23,6 +23,10 @@ const photos = [
 // 実績データ
 const achievements = [
   {
+    title: '最新インフルエンサーコラボイベント',
+    link: 'https://www.instagram.com/p/DKY-vciTQ9f/?img_index=1'
+  },
+  {
     title: 'インフルエンサー×経営者集客イベント',
     link: 'https://www.instagram.com/p/DIYCEyqTOb3/?igsh=MXYwdTM5OW1nemh4Nw=='
   },
@@ -221,10 +225,13 @@ export default function Home() {
                   イベント × マーケティング事業
                 </p>
                 <p className="text-lg md:text-xl opacity-90">
-                  (株)wolf 代表取締役
+                  株式会社Wolf CEO
                 </p>
                 <p className="text-base md:text-lg opacity-80 max-w-lg">
-                  元神奈川県警察第一機動隊から起業家へ。累計100本以上のイベント実績、総フォロワー3,000万規模にリーチ。
+                  元警察特殊部隊から起業家へ。累計100本以上のイベント実績、総フォロワー3,000万規模にリーチ。
+                </p>
+                <p className="text-sm md:text-base opacity-70">
+                  口癖は「伸び代」
                 </p>
               </motion.div>
 
@@ -305,10 +312,13 @@ export default function Home() {
                 神奈川県出身、東京・新宿在住。1999年生まれ、25歳。
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                元 神奈川県警察第一機動隊（18～22歳）を経て、(株)Neptuneにて営業部長として、SNSマーケ・映像スクールの商材販売を担当。
+                元警察特殊部隊（18～22歳）を経て、(株)Neptuneにて営業部長として、SNSマーケ・映像スクールの商材販売を担当。
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                2024年11月に独立・起業し、(株)wolf代表取締役として、飲食マーケティング・コンサル、イベントプロデュース、SaaS事業の3領域を主軸に活動中。
+                2024年11月に独立・起業し、株式会社Wolf CEOとして、BPO事業（Sales/SNS/建築）、イベントプロデュース、SaaS事業を主軸に活動中。
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                Event Organizer：6.8東京タワー開催、30Mフォロワー連携、1ヶ月で100名集客を達成。
               </p>
             </motion.div>
           </div>
@@ -329,8 +339,8 @@ export default function Home() {
             {[
               {
                 period: '2024年11月 - 現在',
-                title: '(株)wolf 代表取締役',
-                description: '独立・起業。飲食マーケティング・コンサル、イベントプロデュース、SaaS事業を展開',
+                title: '株式会社Wolf CEO',
+                description: '独立・起業。BPO事業（Sales/SNS/建築）、イベントプロデュース、SaaS事業を展開',
                 icon: <Briefcase className="text-blue-600" size={24} />
               },
               {
@@ -341,8 +351,8 @@ export default function Home() {
               },
               {
                 period: '2018年 - 2022年',
-                title: '神奈川県警察第一機動隊',
-                description: '18～22歳の4年間、警察官として勤務',
+                title: '元警察 特殊部隊',
+                description: '18～22歳の4年間、特殊部隊として勤務',
                 icon: <Calendar className="text-green-600" size={24} />
               }
             ].map((item, index) => (
@@ -384,18 +394,18 @@ export default function Home() {
           >
             {[
               {
-                title: '① 飲食マーケティング・コンサル',
-                description: '飲食店の「0→1」立ち上げから、「1→100」の売上最大化までを支援。4,000名規模の人脈リストを活用したリアル集客に加え、SNS・MEO・グルメインフルエンサーを巻き込む戦略で認知を拡大。',
+                title: '① BPO事業',
+                description: 'Sales、SNS、建築の3分野でBPOサービスを提供。クライアント企業の業務効率化と成長支援を実現。',
                 gradient: 'from-orange-400 to-red-500'
               },
               {
                 title: '② イベントプロデュース',
-                description: '東京タワー、トランポランドなどの貸切イベントを通じ、インフルエンサー×経営者の交流機会を創出。累計100本以上のイベント実績、総フォロワー3,000万規模にリーチ。',
+                description: 'Event Organizer：6.8東京タワー開催。30Mフォロワー連携、1ヶ月で100名集客。インフルエンサー×経営者の交流機会を創出。累計100本以上のイベント実績。',
                 gradient: 'from-purple-400 to-pink-500'
               },
               {
-                title: '③ SaaS事業（開発中）',
-                description: 'マネージャー向けのマネジメント領域に特化したSaaSサービスを展開。',
+                title: '③ 飲食マーケティング・コンサル',
+                description: '飲食店の「0→1」立ち上げから、「1→100」の売上最大化までを支援。Instagram：@uratoku_gourmet',
                 gradient: 'from-blue-400 to-cyan-500'
               }
             ].map((business, index) => (
@@ -515,7 +525,7 @@ export default function Home() {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-700 mb-3">趣味</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['筋トレ', 'サバゲー', 'ダイビング', 'サウナ', '格闘技', 'イベント企画', '散歩'].map((hobby, index) => (
+                    {['筋トレ', 'MMA', 'サウナ', 'ダイビング', 'サバゲー', '格闘技', 'イベント企画', '散歩'].map((hobby, index) => (
                       <span 
                         key={index}
                         className="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-sm font-medium"
