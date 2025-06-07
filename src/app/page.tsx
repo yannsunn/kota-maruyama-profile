@@ -297,13 +297,12 @@ export default function Home() {
             <motion.div {...fadeInLeft}>
               <div className="relative w-full max-w-md mx-auto">
                 <Image
-                  src="/S__8241403.jpg"
+                  src="/kota-about.jpg"
                   alt="丸山康太"
                   width={400}
                   height={500}
                   className="rounded-2xl shadow-2xl object-cover"
                 />
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl"></div>
               </div>
             </motion.div>
             
