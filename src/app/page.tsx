@@ -210,13 +210,18 @@ export default function Home() {
               </motion.div>
               
               <motion.h1 
-                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight"
+                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight text-white"
                 {...fadeInUp}
                 transition={{ delay: 0.1 }}
               >
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  まるやまこうた
-                </span>
+                丸山康太
+                <motion.span 
+                  className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
+                  {...fadeInUp}
+                  transition={{ delay: 0.2 }}
+                >
+                  (まるやまこうた)
+                </motion.span>
               </motion.h1>
               
               <motion.div 
@@ -231,7 +236,9 @@ export default function Home() {
                   株式会社Wolf CEO
                 </p>
                 <p className="text-sm sm:text-base md:text-lg opacity-80 max-w-lg">
-                  元警察特殊部隊から起業家へ。累計100本以上のイベント実績、総フォロワー3,000万規模にリーチ。
+                  元警察特殊部隊から起業家へ。<br className="sm:hidden" />
+                  累計100本以上のイベント実績、<br className="sm:hidden" />
+                  総フォロワー3,000万規模にリーチ。
                 </p>
                 <p className="text-xs sm:text-sm md:text-base opacity-70">
                   口癖は「伸び代」
@@ -314,13 +321,21 @@ export default function Home() {
                 神奈川県出身、東京・新宿在住。1999年生まれ、25歳。
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                元警察特殊部隊（18～22歳）を経て、(株)Neptuneにて営業部長として、SNSマーケ・映像スクールの商材販売を担当。
+                元警察特殊部隊（18～22歳）を経て、<br className="sm:hidden" />
+                (株)Neptuneにて営業部長として、<br className="sm:hidden" />
+                SNSマーケ・映像スクールの商材販売を担当。
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                2024年11月に独立・起業し、株式会社Wolf CEOとして、BPO事業（Sales/SNS/建築）、イベントプロデュース、SaaS事業を主軸に活動中。
+                2024年11月に独立・起業し、<br className="sm:hidden" />
+                株式会社Wolf CEOとして、<br className="sm:hidden" />
+                BPO事業（Sales/SNS/建築）、<br className="md:hidden" />
+                イベントプロデュース、SaaS事業を主軸に活動中。
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                Event Organizer：6.8東京タワー開催、30Mフォロワー連携、1ヶ月で100名集客を達成。
+                Event Organizer：<br className="sm:hidden" />
+                6.8東京タワー開催、<br className="md:hidden" />
+                30Mフォロワー連携、<br className="md:hidden" />
+                1ヶ月で100名集客を達成。
               </p>
             </motion.div>
           </div>
@@ -554,7 +569,8 @@ export default function Home() {
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            ビジネスのご相談やイベントの企画など、お気軽にお声がけください
+            ビジネスのご相談やイベントの企画など、<br className="sm:hidden" />
+            お気軽にお声がけください
           </motion.p>
           
           <motion.div 
@@ -610,7 +626,7 @@ export default function Home() {
           >
             <h3 className="text-2xl font-bold text-gray-800">おばんざいさくら</h3>
             <div className="space-y-2 text-gray-600">
-              <p>〒160-0022 東京都新宿区新宿３丁目８−２ クロスビル B1階</p>
+              <p className="break-all sm:break-normal">〒160-0022<br className="sm:hidden" /> 東京都新宿区新宿３丁目８−２<br className="sm:hidden" /> クロスビル B1階</p>
               <p>TEL: <a href="tel:0359258182" className="text-blue-600 hover:underline">03-5925-8182</a></p>
             </div>
           </motion.div>
