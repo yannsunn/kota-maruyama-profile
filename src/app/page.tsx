@@ -127,8 +127,8 @@ export default function Home() {
           />
         </div>
         
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 text-center text-white px-4 py-8 md:py-0 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Profile Image Section */}
             <motion.div 
               className="relative order-2 lg:order-1"
@@ -136,7 +136,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto">
                 {/* Glowing ring */}
                 <motion.div 
                   className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1"
@@ -210,7 +210,7 @@ export default function Home() {
               </motion.div>
               
               <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight"
+                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight"
                 {...fadeInUp}
                 transition={{ delay: 0.1 }}
               >
@@ -219,7 +219,7 @@ export default function Home() {
                   康太
                 </span>
                 <motion.span 
-                  className="block text-xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
+                  className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
                 >
@@ -228,33 +228,33 @@ export default function Home() {
               </motion.h1>
               
               <motion.div 
-                className="space-y-3 mb-8"
+                className="space-y-2 sm:space-y-3 mb-6 sm:mb-8"
                 {...fadeInUp}
                 transition={{ delay: 0.3 }}
               >
-                <p className="text-xl md:text-2xl font-semibold">
+                <p className="text-lg sm:text-xl md:text-2xl font-semibold">
                   イベント × マーケティング事業
                 </p>
-                <p className="text-lg md:text-xl opacity-90">
+                <p className="text-base sm:text-lg md:text-xl opacity-90">
                   株式会社Wolf CEO
                 </p>
-                <p className="text-base md:text-lg opacity-80 max-w-lg">
+                <p className="text-sm sm:text-base md:text-lg opacity-80 max-w-lg">
                   元警察特殊部隊から起業家へ。累計100本以上のイベント実績、総フォロワー3,000万規模にリーチ。
                 </p>
-                <p className="text-sm md:text-base opacity-70">
+                <p className="text-xs sm:text-sm md:text-base opacity-70">
                   口癖は「伸び代」
                 </p>
               </motion.div>
 
               <motion.div 
-                className="flex flex-wrap gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 {...fadeInUp}
                 transition={{ delay: 0.5 }}
               >
                 <a 
                   href="https://www.instagram.com/marukou0722/" 
                   target="_blank"
-                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
                 >
                   <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-left">
@@ -265,7 +265,7 @@ export default function Home() {
                 <a 
                   href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic" 
                   target="_blank"
-                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
                 >
                   <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-left">
