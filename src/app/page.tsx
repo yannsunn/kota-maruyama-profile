@@ -518,10 +518,6 @@ export default function Home() {
                       <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                       おばんざいさくら 副代表
                     </p>
-                    <p className="flex items-center gap-2 text-gray-600">
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                      グルメインフルエンサー
-                    </p>
                   </div>
                 </div>
                 <div>
