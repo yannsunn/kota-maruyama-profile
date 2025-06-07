@@ -223,7 +223,7 @@ export default function Home() {
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
                 >
-                  （こうた）
+                  (こうた)
                 </motion.span>
               </motion.h1>
               
