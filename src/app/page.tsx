@@ -76,72 +76,203 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Dynamic gradient background with mesh pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-pink-500/20 to-cyan-500/20"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         
-        <motion.div 
-          className="relative z-10 text-center text-white px-4"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
-            {...fadeInUp}
-          >
-            丸山 康太
-            <span className="block text-2xl md:text-3xl font-light mt-2 opacity-90">
-              （こうた）
-            </span>
-          </motion.h1>
-          
-          <motion.p 
-            className="text-xl md:text-2xl mb-4 font-medium"
-            {...fadeInUp}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            イベント × マーケティング事業
-          </motion.p>
-          
-          <motion.p 
-            className="text-lg md:text-xl opacity-90 mb-8"
-            {...fadeInUp}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            (株)wolf 代表取締役
-          </motion.p>
-
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
           <motion.div 
-            className="flex flex-wrap justify-center gap-4"
-            {...fadeInUp}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <a 
-              href="https://www.instagram.com/uratoku_gourmet" 
-              target="_blank"
-              className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full hover:bg-white/30 transition-all duration-300"
+            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-white/10 to-white/5 rounded-full blur-3xl"
+            animate={{ 
+              x: [0, 50, 0], 
+              y: [0, -30, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          />
+          <motion.div 
+            className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-white/10 to-white/5 rounded-full blur-3xl"
+            animate={{ 
+              x: [0, -30, 0], 
+              y: [0, 40, 0],
+              scale: [1, 0.9, 1]
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Profile Image Section */}
+            <motion.div 
+              className="relative order-2 lg:order-1"
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Instagram size={20} />
-              グルメアカウント
-            </a>
-            <a 
-              href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic" 
-              target="_blank"
-              className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full hover:bg-white/30 transition-all duration-300"
-            >
-              <MapPin size={20} />
-              おばんざいさくら
-            </a>
-          </motion.div>
-        </motion.div>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                {/* Glowing ring */}
+                <motion.div 
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                >
+                  <div className="w-full h-full rounded-full bg-black/20 backdrop-blur-sm"></div>
+                </motion.div>
+                
+                {/* Profile Image */}
+                <motion.div 
+                  className="absolute inset-2 rounded-full overflow-hidden shadow-2xl"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Image
+                    src="/kota-profile.jpg"
+                    alt="丸山康太"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                
+                {/* Floating elements */}
+                <motion.div 
+                  className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    rotate: [0, 10, 0]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <Trophy size={20} className="text-white" />
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg"
+                  animate={{ 
+                    y: [0, 10, 0],
+                    rotate: [0, -10, 0]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                >
+                  <Briefcase size={16} className="text-white" />
+                </motion.div>
+              </div>
+            </motion.div>
 
-        {/* Scroll indicator */}
+            {/* Text Content Section */}
+            <motion.div 
+              className="order-1 lg:order-2 text-left lg:text-left"
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.div
+                className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
+                {...fadeInUp}
+              >
+                <span className="text-sm font-medium">👋 Hello, I'm</span>
+              </motion.div>
+              
+              <motion.h1 
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight"
+                {...fadeInUp}
+                transition={{ delay: 0.1 }}
+              >
+                丸山{' '}
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                  康太
+                </span>
+                <motion.span 
+                  className="block text-xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
+                  {...fadeInUp}
+                  transition={{ delay: 0.2 }}
+                >
+                  （こうた）
+                </motion.span>
+              </motion.h1>
+              
+              <motion.div 
+                className="space-y-3 mb-8"
+                {...fadeInUp}
+                transition={{ delay: 0.3 }}
+              >
+                <p className="text-xl md:text-2xl font-semibold">
+                  イベント × マーケティング事業
+                </p>
+                <p className="text-lg md:text-xl opacity-90">
+                  (株)wolf 代表取締役
+                </p>
+                <p className="text-base md:text-lg opacity-80 max-w-lg">
+                  元神奈川県警察第一機動隊から起業家へ。累計100本以上のイベント実績、総フォロワー3,000万規模にリーチ。
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="flex flex-wrap gap-4"
+                {...fadeInUp}
+                transition={{ delay: 0.5 }}
+              >
+                <a 
+                  href="https://www.instagram.com/uratoku_gourmet" 
+                  target="_blank"
+                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                >
+                  <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                  <div className="text-left">
+                    <p className="font-semibold text-sm">Instagram</p>
+                    <p className="text-xs opacity-80">グルメアカウント</p>
+                  </div>
+                </a>
+                <a 
+                  href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic" 
+                  target="_blank"
+                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                >
+                  <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                  <div className="text-left">
+                    <p className="font-semibold text-sm">Store</p>
+                    <p className="text-xs opacity-80">おばんざいさくら</p>
+                  </div>
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Enhanced scroll indicator */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
         >
-          <div className="w-1 h-16 bg-white/50 rounded-full"></div>
+          <span className="text-white/60 text-xs font-medium">Scroll Down</span>
+          <motion.div 
+            className="w-1 h-12 bg-gradient-to-b from-white/80 to-transparent rounded-full"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          />
         </motion.div>
       </section>
 
