@@ -153,7 +153,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Image
-                    src="/kota-profile.jpg"
+                    src="/S__8241389_0.jpg"
                     alt="丸山康太"
                     fill
                     className="object-cover"
