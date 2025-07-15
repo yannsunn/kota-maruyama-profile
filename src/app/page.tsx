@@ -231,8 +231,8 @@ export default function Home() {
                 </p>
                 <p className="text-sm sm:text-base md:text-lg opacity-80 max-w-lg">
                   元警察特殊部隊から起業家へ。<br className="sm:hidden" />
-                  累計100本以上のイベント実績、<br className="sm:hidden" />
-                  総フォロワー3,000万規模にリーチ。
+                  イベント実績100本超<br className="sm:hidden" />
+                  総リーチ3,000万フォロワー
                 </p>
                 <p className="text-xs sm:text-sm md:text-base opacity-70">
                   口癖は「伸び代」
@@ -320,16 +320,15 @@ export default function Home() {
                 SNSマーケ・映像スクールの商材販売を担当。
               </p>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                2024年11月に独立・起業し、<br className="sm:hidden" />
+                2024年11月に創業。<br className="sm:hidden" />
                 株式会社Wolf CEOとして、<br className="sm:hidden" />
                 BPO事業（Sales/SNS/建築）、<br className="md:hidden" />
                 イベントプロデュース、SaaS事業を主軸に活動中。
               </p>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Event Organizer：<br className="sm:hidden" />
-                6.8東京タワー開催、<br className="md:hidden" />
-                30Mフォロワー連携、<br className="md:hidden" />
-                1ヶ月で100名集客を達成。
+                東京タワーイベント主催（6月8日）<br className="sm:hidden" />
+                30万フォロワー連携・<br className="md:hidden" />
+                月間100名集客達成
               </p>
             </motion.div>
           </div>
@@ -351,7 +350,7 @@ export default function Home() {
               {
                 period: '2024年11月 - 現在',
                 title: '株式会社Wolf CEO',
-                description: '独立・起業。BPO事業（Sales/SNS/建築）、イベントプロデュース、SaaS事業を展開',
+                description: '創業。BPO事業（Sales/SNS/建築）、イベントプロデュース、SaaS事業を展開',
                 icon: <Briefcase className="text-blue-700" size={24} />
               },
               {
@@ -406,17 +405,17 @@ export default function Home() {
             {[
               {
                 title: '① BPO事業',
-                description: 'Sales、SNS、建築の3分野でBPOサービスを提供。クライアント企業の業務効率化と成長支援を実現。',
+                description: '営業・SNS・建築の3領域で業務最適化を実現',
                 gradient: 'from-gray-600 to-gray-800'
               },
               {
                 title: '② イベントプロデュース',
-                description: 'Event Organizer：6.8東京タワー開催。30Mフォロワー連携、1ヶ月で100名集客。インフルエンサー×経営者の交流機会を創出。累計100本以上のイベント実績。',
+                description: '累計100本超の実績。インフルエンサー×経営者の架け橋',
                 gradient: 'from-blue-600 to-blue-800'
               },
               {
                 title: '③ 飲食マーケティング・コンサル',
-                description: '飲食店の「0→1」立ち上げから、「1→100」の売上最大化までを支援。自身の4,000名規模の人脈リストを活用したリアル集客。',
+                description: '0→1立ち上げから売上最大化まで。4,000名の独自ネットワーク活用',
                 gradient: 'from-gray-500 to-gray-700'
               }
             ].map((business, index) => (
