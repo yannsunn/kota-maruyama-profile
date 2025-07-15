@@ -445,11 +445,11 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-2">
                   <div className="p-3 bg-gray-50 rounded-lg">
                     <p className="text-xs font-semibold text-gray-800">経営者 150名</p>
-                    <p className="text-xs text-gray-600 mt-1">参加費 2万円</p>
+                    <p className="text-xs text-gray-600 mt-1">総フォロワー3,000万リーチ</p>
                   </div>
                   <div className="p-3 bg-gray-50 rounded-lg">
                     <p className="text-xs font-semibold text-gray-800">インフルエンサー 100名</p>
-                    <p className="text-xs text-gray-600 mt-1">参加費 5,000円</p>
+                    <p className="text-xs text-gray-600 mt-1">ビジネスマッチング実績多数</p>
                   </div>
                 </div>
               </div>
