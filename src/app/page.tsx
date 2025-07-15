@@ -417,7 +417,8 @@ export default function Home() {
                 <p className="text-sm font-semibold text-gray-800 mb-2">節約マーケ君</p>
                 <p className="text-xs text-gray-600 mb-2">by 株式会社Perfact</p>
                 <a 
-                  href="#" 
+                  href="https://docs.google.com/presentation/d/1bbNZD6bPcGXMabY6nve-OdkFeVjy9aUM/edit?slide=id.g34206fbfd05_0_698#slide=id.g34206fbfd05_0_698" 
+                  target="_blank"
                   className="text-xs text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
                 >
                   サービス資料はこちら
