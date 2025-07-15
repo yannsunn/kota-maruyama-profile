@@ -402,43 +402,165 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            {[
-              {
-                title: '① BPO事業',
-                description: '営業・SNS・建築の3領域で業務最適化を実現',
-                gradient: 'from-gray-600 to-gray-800'
-              },
-              {
-                title: '② イベントプロデュース',
-                description: '累計100本超の実績。インフルエンサー×経営者の架け橋',
-                gradient: 'from-blue-600 to-blue-800'
-              },
-              {
-                title: '③ 飲食マーケティング・コンサル',
-                description: '0→1立ち上げから売上最大化まで。4,000名の独自ネットワーク活用',
-                gradient: 'from-gray-500 to-gray-700'
-              }
-            ].map((business, index) => (
-              <motion.div 
-                key={index}
-                className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-                variants={fadeInUp}
+            <motion.div 
+              className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              variants={fadeInUp}
+            >
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-600 to-gray-800 rounded-t-3xl"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                ① BPO事業
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                営業・SNS・建築の3領域で業務最適化を実現
+              </p>
+              <div className="mt-4 p-4 bg-gray-50 rounded-xl">
+                <p className="text-sm font-semibold text-gray-800 mb-2">節約マーケ君</p>
+                <p className="text-xs text-gray-600 mb-2">by 株式会社Perfact</p>
+                <a 
+                  href="#" 
+                  className="text-xs text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
+                >
+                  サービス資料はこちら
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              variants={fadeInUp}
+            >
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-t-3xl"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                ② イベントプロデュース
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                累計100本超の実績。インフルエンサー×経営者の架け橋
+              </p>
+              <div className="space-y-3">
+                <div className="p-3 bg-blue-50 rounded-lg">
+                  <p className="text-sm font-semibold text-blue-900">250名規模イベント</p>
+                  <p className="text-xs text-blue-700 mt-1">東京タワー / トランポランド</p>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs font-semibold text-gray-800">経営者 150名</p>
+                    <p className="text-xs text-gray-600 mt-1">参加費 2万円</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs font-semibold text-gray-800">インフルエンサー 100名</p>
+                    <p className="text-xs text-gray-600 mt-1">参加費 5,000円</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              variants={fadeInUp}
+            >
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-500 to-gray-700 rounded-t-3xl"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                ③ 飲食マーケティング・コンサル
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                0→1立ち上げから売上最大化まで。4,000名の独自ネットワーク活用
+              </p>
+              <div className="mt-4 p-4 bg-gray-50 rounded-xl">
+                <p className="text-sm font-semibold text-gray-800">おばんざいさくら</p>
+                <p className="text-xs text-gray-600 mt-1">新宿で展開中</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Advisory Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            顧問業
+          </motion.h2>
+          
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={stagger}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+                <Trophy size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">チルモングミ</h3>
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600">1年間で1万2,000個販売</p>
+                <p className="text-sm font-semibold text-blue-700">Amazonグミランキング5位</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
+                <Heart size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">animal dentist</h3>
+              <p className="text-sm text-gray-600">犬用歯磨き粉事業</p>
+            </motion.div>
+
+            <motion.div 
+              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+                <Instagram size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">エランマリール</h3>
+              <div className="space-y-2">
+                <a 
+                  href="https://www.instagram.com/elan_marire/"
+                  target="_blank"
+                  className="text-sm text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
+                >
+                  Instagram
+                  <ExternalLink size={12} />
+                </a>
+                <p className="text-xs text-gray-600">エステ2万円券無料招待</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
+                <Briefcase size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">リンクストレッチ</h3>
+              <a 
+                href="https://www.instagram.com/link_stretch/"
+                target="_blank"
+                className="text-sm text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
               >
-                <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${business.gradient} rounded-t-3xl`}></div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
-                  {business.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {business.description}
-                </p>
-              </motion.div>
-            ))}
+                Instagram
+                <ExternalLink size={12} />
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
