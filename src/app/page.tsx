@@ -136,7 +136,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto">
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] mx-auto">
                 {/* Glowing ring */}
                 <motion.div 
                   className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-400 via-blue-600 to-gray-600 p-1"
@@ -163,7 +163,7 @@ export default function Home() {
                 
                 {/* Floating elements */}
                 <motion.div 
-                  className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg"
+                  className="absolute -top-4 -right-4 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg"
                   animate={{ 
                     y: [0, -10, 0],
                     rotate: [0, 10, 0]
@@ -174,11 +174,11 @@ export default function Home() {
                     ease: "easeInOut" 
                   }}
                 >
-                  <Trophy size={20} className="text-white" />
+                  <Trophy className="text-white w-5 h-5 md:w-6 md:h-6" />
                 </motion.div>
                 
                 <motion.div 
-                  className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full flex items-center justify-center shadow-lg"
+                  className="absolute -bottom-4 -left-4 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full flex items-center justify-center shadow-lg"
                   animate={{ 
                     y: [0, 10, 0],
                     rotate: [0, -10, 0]
@@ -190,7 +190,7 @@ export default function Home() {
                     delay: 1
                   }}
                 >
-                  <Briefcase size={16} className="text-white" />
+                  <Briefcase className="text-white w-4 h-4 md:w-5 md:h-5" />
                 </motion.div>
               </div>
             </motion.div>
@@ -240,30 +240,30 @@ export default function Home() {
               </motion.div>
 
               <motion.div 
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-5 justify-center lg:justify-start"
                 {...fadeInUp}
                 transition={{ delay: 0.5 }}
               >
                 <a 
                   href="https://www.instagram.com/marukou0722/" 
                   target="_blank"
-                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
+                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 lg:px-8 lg:py-5 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
                 >
-                  <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                  <Instagram className="group-hover:scale-110 transition-transform duration-300 w-5 h-5 lg:w-6 lg:h-6" />
                   <div className="text-left">
-                    <p className="font-semibold text-sm">Instagram</p>
-                    <p className="text-xs opacity-80">@marukou0722</p>
+                    <p className="font-semibold text-sm lg:text-base">Instagram</p>
+                    <p className="text-xs lg:text-sm opacity-80">@marukou0722</p>
                   </div>
                 </a>
                 <a 
                   href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic" 
                   target="_blank"
-                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
+                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 lg:px-8 lg:py-5 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
                 >
-                  <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                  <MapPin className="group-hover:scale-110 transition-transform duration-300 w-5 h-5 lg:w-6 lg:h-6" />
                   <div className="text-left">
-                    <p className="font-semibold text-sm">Store</p>
-                    <p className="text-xs opacity-80">おばんざいさくら</p>
+                    <p className="font-semibold text-sm lg:text-base">Store</p>
+                    <p className="text-xs lg:text-sm opacity-80">おばんざいさくら</p>
                   </div>
                 </a>
               </motion.div>
@@ -396,14 +396,14 @@ export default function Home() {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
             variants={stagger}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
             <motion.div 
-              className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group relative p-8 lg:p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-600 to-gray-800 rounded-t-3xl"></div>
@@ -413,7 +413,8 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 営業・SNS・建築の3領域で業務最適化を実現
               </p>
-              <div className="mt-4 p-4 bg-gray-50 rounded-xl">
+              <div className="mt-auto pt-4">
+                <div className="p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm font-semibold text-gray-800 mb-2">節約マーケ君</p>
                 <p className="text-xs text-gray-600 mb-2">by 株式会社Perfact</p>
                 <a 
@@ -424,11 +425,12 @@ export default function Home() {
                   サービス資料はこちら
                   <ExternalLink size={12} />
                 </a>
+                </div>
               </div>
             </motion.div>
 
             <motion.div 
-              className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group relative p-8 lg:p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-t-3xl"></div>
@@ -438,7 +440,7 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 累計100本超の実績。インフルエンサー×経営者の架け橋
               </p>
-              <div className="space-y-3">
+              <div className="space-y-3 mt-auto pt-4">
                 <div className="p-3 bg-blue-50 rounded-lg">
                   <p className="text-sm font-semibold text-blue-900">250名規模イベント</p>
                   <p className="text-xs text-blue-700 mt-1">東京タワー / トランポランド</p>
@@ -457,7 +459,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div 
-              className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group relative p-8 lg:p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-500 to-gray-700 rounded-t-3xl"></div>
@@ -467,9 +469,11 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed">
                 0→1立ち上げから売上最大化まで。4,000名の独自ネットワーク活用
               </p>
-              <div className="mt-4 p-4 bg-gray-50 rounded-xl">
+              <div className="mt-auto pt-4">
+                <div className="p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm font-semibold text-gray-800">おばんざいさくら</p>
                 <p className="text-xs text-gray-600 mt-1">新宿で展開中</p>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -487,14 +491,14 @@ export default function Home() {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
             variants={stagger}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
             <motion.div 
-              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="mb-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
@@ -508,7 +512,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div 
-              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="mb-4 w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
@@ -519,7 +523,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div 
-              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="mb-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
@@ -540,7 +544,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div 
-              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               variants={fadeInUp}
             >
               <div className="mb-4 w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
@@ -571,7 +575,7 @@ export default function Home() {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8"
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -690,7 +694,7 @@ export default function Home() {
           </motion.p>
           
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto"
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -699,26 +703,26 @@ export default function Home() {
             <motion.a 
               href="https://www.instagram.com/marukou0722/"
               target="_blank"
-              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full"
+              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 lg:p-8 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full hover:scale-105"
               variants={fadeInUp}
             >
-              <Instagram className="text-white group-hover:scale-110 transition-transform duration-300" size={24} />
+              <Instagram className="text-white group-hover:scale-110 transition-transform duration-300 w-6 h-6 lg:w-8 lg:h-8" />
               <div className="text-left">
-                <p className="text-white font-semibold">Instagram</p>
-                <p className="text-white/80 text-sm">@marukou0722</p>
+                <p className="text-white font-semibold lg:text-lg">Instagram</p>
+                <p className="text-white/80 text-sm lg:text-base">@marukou0722</p>
               </div>
             </motion.a>
             
             <motion.a 
               href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
               target="_blank"
-              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full"
+              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 lg:p-8 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full hover:scale-105"
               variants={fadeInUp}
             >
-              <MapPin className="text-white group-hover:scale-110 transition-transform duration-300" size={24} />
+              <MapPin className="text-white group-hover:scale-110 transition-transform duration-300 w-6 h-6 lg:w-8 lg:h-8" />
               <div className="text-left">
-                <p className="text-white font-semibold">おばんざいさくら</p>
-                <p className="text-white/80 text-sm">店舗にて直接ご相談</p>
+                <p className="text-white font-semibold lg:text-lg">おばんざいさくら</p>
+                <p className="text-white/80 text-sm lg:text-base">店舗にて直接ご相談</p>
               </div>
             </motion.a>
           </motion.div>
@@ -801,7 +805,7 @@ export default function Home() {
             <a 
               href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
               target="_blank"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:shadow-lg transition-all duration-300 group w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 group w-full sm:w-auto lg:text-lg"
             >
               <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
               <span>Google マップで開く</span>
