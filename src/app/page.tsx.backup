@@ -1,0 +1,825 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Instagram, MapPin, ExternalLink, Calendar, Briefcase, Heart, Trophy } from 'lucide-react';
+import Image from 'next/image';
+
+// 写真データ
+const photos = [
+  'S__8241403.jpg',
+  'S__8241389_0.jpg',
+  'S__8241391_0.jpg',
+  'S__8241392_0.jpg',
+  'S__8241393_0.jpg',
+  'S__8241394_0.jpg',
+  'S__8241395_0.jpg',
+  'S__8241396.jpg',
+  'S__8241397.jpg',
+  'S__8241399.jpg',
+  'S__8241400.jpg',
+  'S__8241402.jpg'
+];
+
+// 実績データ
+const achievements = [
+  {
+    title: '最新インフルエンサーコラボイベント',
+    link: 'https://www.instagram.com/p/DKY-vciTQ9f/?img_index=1'
+  },
+  {
+    title: 'インフルエンサー×経営者集客イベント',
+    link: 'https://www.instagram.com/p/DIYCEyqTOb3/?igsh=MXYwdTM5OW1nemh4Nw=='
+  },
+  {
+    title: '同い年会',
+    link: 'https://www.instagram.com/p/DJz6MoMT2MT/?igsh=MTNtcmlpNmZ4MnpjZg=='
+  },
+  {
+    title: 'スポーツイベント 1',
+    link: 'https://www.instagram.com/p/C67uwGPSxbP/?igsh=MTloZW83Njd1cWxibA=='
+  },
+  {
+    title: 'スポーツイベント 2',
+    link: 'https://www.instagram.com/p/C9b3i7WyIA3/?igsh=MmFpZmM4bGFhZnRt'
+  },
+  {
+    title: 'サバゲーイベント',
+    link: 'https://www.instagram.com/p/C2j7RsPyZIH/?igsh=d3h5aXJsZXYwbWZ3'
+  }
+];
+
+// アニメーション設定
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -60 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6 }
+};
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 60 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6 }
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Dynamic gradient background with mesh pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 via-transparent to-gray-800/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-800/20 via-transparent to-transparent"></div>
+        
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div 
+            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/10 to-gray-600/5 rounded-full blur-3xl"
+            animate={{ 
+              x: [0, 50, 0], 
+              y: [0, -30, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          />
+          <motion.div 
+            className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-blue-700/10 to-gray-500/5 rounded-full blur-3xl"
+            animate={{ 
+              x: [0, -30, 0], 
+              y: [0, 40, 0],
+              scale: [1, 0.9, 1]
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-gray-600/5 via-transparent to-blue-800/5 rounded-full blur-3xl"
+            animate={{ 
+              rotate: [0, 360]
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity, 
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center text-white px-4 py-12 sm:py-8 md:py-0 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Profile Image Section */}
+            <motion.div 
+              className="relative order-2 lg:order-1"
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] mx-auto">
+                {/* Glowing ring */}
+                <motion.div 
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-400 via-blue-600 to-gray-600 p-1"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                >
+                  <div className="w-full h-full rounded-full bg-black/20 backdrop-blur-sm"></div>
+                </motion.div>
+                
+                {/* Profile Image */}
+                <motion.div 
+                  className="absolute inset-2 rounded-full overflow-hidden shadow-2xl"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Image
+                    src="/kota-profile.jpg"
+                    alt="丸山康太"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                
+                {/* Floating elements */}
+                <motion.div 
+                  className="absolute -top-4 -right-4 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    rotate: [0, 10, 0]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <Trophy className="text-white w-5 h-5 md:w-6 md:h-6" />
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute -bottom-4 -left-4 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full flex items-center justify-center shadow-lg"
+                  animate={{ 
+                    y: [0, 10, 0],
+                    rotate: [0, -10, 0]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                >
+                  <Briefcase className="text-white w-4 h-4 md:w-5 md:h-5" />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Text Content Section */}
+            <motion.div 
+              className="order-1 lg:order-2 text-center lg:text-left"
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              
+              <motion.h1 
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight text-white"
+                {...fadeInUp}
+                transition={{ delay: 0.1 }}
+              >
+                丸山康太
+                <motion.span 
+                  className="block text-xl sm:text-2xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
+                  {...fadeInUp}
+                  transition={{ delay: 0.2 }}
+                >
+                  (まるやまこうた)
+                </motion.span>
+              </motion.h1>
+              
+              <motion.div 
+                className="space-y-3 sm:space-y-3 mb-8 sm:mb-8"
+                {...fadeInUp}
+                transition={{ delay: 0.3 }}
+              >
+                <p className="text-xl sm:text-xl md:text-2xl font-semibold">
+                  イベント × マーケティング事業
+                </p>
+                <p className="text-lg sm:text-lg md:text-xl opacity-90">
+                  株式会社Wolf CEO
+                </p>
+                <p className="text-base sm:text-base md:text-lg opacity-80 max-w-lg mx-auto lg:mx-0">
+                  元警察特殊部隊から起業家へ。<br />
+                  イベント実績100本超<br />
+                  総リーチ3,000万フォロワー
+                </p>
+                <p className="text-sm sm:text-sm md:text-base opacity-70">
+                  口癖は「伸び代」
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-5 justify-center lg:justify-start"
+                {...fadeInUp}
+                transition={{ delay: 0.5 }}
+              >
+                <a 
+                  href="https://www.instagram.com/marukou0722/" 
+                  target="_blank"
+                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 lg:px-8 lg:py-5 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
+                >
+                  <Instagram className="group-hover:scale-110 transition-transform duration-300 w-5 h-5 lg:w-6 lg:h-6" />
+                  <div className="text-left">
+                    <p className="font-semibold text-sm lg:text-base">Instagram</p>
+                    <p className="text-xs lg:text-sm opacity-80">@marukou0722</p>
+                  </div>
+                </a>
+                <a 
+                  href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic" 
+                  target="_blank"
+                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 lg:px-8 lg:py-5 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
+                >
+                  <MapPin className="group-hover:scale-110 transition-transform duration-300 w-5 h-5 lg:w-6 lg:h-6" />
+                  <div className="text-left">
+                    <p className="font-semibold text-sm lg:text-base">Store</p>
+                    <p className="text-xs lg:text-sm opacity-80">おばんざいさくら</p>
+                  </div>
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Enhanced scroll indicator */}
+        <motion.div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          <span className="text-white/60 text-xs font-medium">Scroll Down</span>
+          <motion.div 
+            className="w-1 h-12 bg-gradient-to-b from-white/80 to-transparent rounded-full"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 sm:py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            About
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeInLeft}>
+              <div className="relative w-full max-w-md mx-auto">
+                <Image
+                  src="/S__8241389_0.jpg"
+                  alt="丸山康太"
+                  width={400}
+                  height={500}
+                  className="rounded-2xl shadow-2xl object-cover"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.div {...fadeInRight} className="space-y-6 text-center md:text-left">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                神奈川県出身、東京・新宿在住。1999年生まれ、25歳。
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                元警察特殊部隊（18～22歳）を経て、<br />
+                (株)Neptuneにて営業部長として、<br />
+                SNSマーケ・映像スクールの商材販売を担当。
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                2024年11月に創業。<br />
+                株式会社Wolf CEOとして、<br />
+                BPO事業（Sales/SNS/建築）、<br />
+                イベントプロデュース、SaaS事業を主軸に活動中。
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                東京タワーイベント主催（6月8日）<br />
+                30万フォロワー連携・<br />
+                月間100名集客達成
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-16 sm:py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            経歴
+          </motion.h2>
+          
+          <motion.div className="space-y-8" variants={stagger} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            {[
+              {
+                period: '2024年11月 - 現在',
+                title: '株式会社Wolf CEO',
+                description: '創業。BPO事業（Sales/SNS/建築）、イベントプロデュース、SaaS事業を展開',
+                icon: <Briefcase className="text-blue-700" size={24} />
+              },
+              {
+                period: '2022年 - 2024年',
+                title: '(株)Neptune 営業部長',
+                description: 'SNSマーケ・映像スクールの商材販売を担当',
+                icon: <Trophy className="text-blue-600" size={24} />
+              },
+              {
+                period: '2018年 - 2022年',
+                title: '元警察 特殊部隊',
+                description: '18～22歳の4年間、特殊部隊として勤務',
+                icon: <Calendar className="text-gray-600" size={24} />
+              }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                className="flex gap-6 p-6 bg-gradient-to-r from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                variants={fadeInUp}
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+                  {item.icon}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-blue-700 mb-1">{item.period}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Business Section */}
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            事業内容
+          </motion.h2>
+          
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+            variants={stagger}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="group relative p-8 lg:p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-600 to-gray-800 rounded-t-3xl"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                ① BPO事業
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                営業・SNS・建築の3領域で業務最適化を実現
+              </p>
+              <div className="mt-auto pt-4">
+                <div className="p-4 bg-gray-50 rounded-xl">
+                <p className="text-sm font-semibold text-gray-800 mb-2">節約マーケ君</p>
+                <p className="text-xs text-gray-600 mb-2">by 株式会社Perfact</p>
+                <a 
+                  href="https://docs.google.com/presentation/d/1bbNZD6bPcGXMabY6nve-OdkFeVjy9aUM/edit?slide=id.g34206fbfd05_0_698#slide=id.g34206fbfd05_0_698" 
+                  target="_blank"
+                  className="text-xs text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
+                >
+                  サービス資料はこちら
+                  <ExternalLink size={12} />
+                </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="group relative p-8 lg:p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-t-3xl"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                ② イベントプロデュース
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                累計100本超の実績。インフルエンサー×経営者の架け橋
+              </p>
+              <div className="space-y-3 mt-auto pt-4">
+                <div className="p-3 bg-blue-50 rounded-lg">
+                  <p className="text-sm font-semibold text-blue-900">250名規模イベント</p>
+                  <p className="text-xs text-blue-700 mt-1">東京タワー / トランポランド</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs font-semibold text-gray-800">経営者 150名</p>
+                    <p className="text-xs text-gray-600 mt-1">総フォロワー3,000万リーチ</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs font-semibold text-gray-800">インフルエンサー 100名</p>
+                    <p className="text-xs text-gray-600 mt-1">ビジネスマッチング実績多数</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="group relative p-8 lg:p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-500 to-gray-700 rounded-t-3xl"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                ③ 飲食マーケティング・コンサル
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                0→1立ち上げから売上最大化まで。4,000名の独自ネットワーク活用
+              </p>
+              <div className="mt-auto pt-4">
+                <div className="p-4 bg-gray-50 rounded-xl">
+                <p className="text-sm font-semibold text-gray-800">おばんざいさくら</p>
+                <p className="text-xs text-gray-600 mt-1">新宿で展開中</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Advisory Section */}
+      <section className="py-16 sm:py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            顧問業
+          </motion.h2>
+          
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+            variants={stagger}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+                <Trophy size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">チルモングミ</h3>
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600">1年間で1万2,000個販売</p>
+                <p className="text-sm font-semibold text-blue-700">Amazonグミランキング5位</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
+                <Heart size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">animal dentist</h3>
+              <p className="text-sm text-gray-600">犬用歯磨き粉事業</p>
+            </motion.div>
+
+            <motion.div 
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+                <Instagram size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">エランマリール</h3>
+              <div className="space-y-2">
+                <a 
+                  href="https://www.instagram.com/elan_marire/"
+                  target="_blank"
+                  className="text-sm text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
+                >
+                  Instagram
+                  <ExternalLink size={12} />
+                </a>
+                <p className="text-xs text-gray-600">エステ2万円券無料招待</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              variants={fadeInUp}
+            >
+              <div className="mb-4 w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
+                <Briefcase size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">リンクストレッチ</h3>
+              <a 
+                href="https://www.instagram.com/link_stretch/"
+                target="_blank"
+                className="text-sm text-blue-700 hover:text-blue-900 hover:underline inline-flex items-center gap-1"
+              >
+                Instagram
+                <ExternalLink size={12} />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            ギャラリー
+          </motion.h2>
+          
+          <motion.div 
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8"
+            variants={stagger}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {photos.map((photo, index) => (
+              <motion.div 
+                key={index}
+                className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Image
+                  src={`/${photo}`}
+                  alt={`イベント風景 ${index + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
+            {...fadeInUp}
+          >
+            実績
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <motion.div 
+              className="bg-white p-8 rounded-3xl shadow-lg"
+              {...fadeInLeft}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Trophy className="text-blue-600" size={28} />
+                イベント実績
+              </h3>
+              <div className="space-y-4">
+                {achievements.map((achievement, index) => (
+                  <a 
+                    key={index}
+                    href={achievement.link}
+                    target="_blank"
+                    className="flex items-center gap-3 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:from-gray-100 hover:to-gray-200 transition-all duration-300 group"
+                  >
+                    <ExternalLink className="text-blue-700 group-hover:scale-110 transition-transform duration-300" size={20} />
+                    <span className="text-gray-600 group-hover:text-blue-700 transition-colors duration-300">
+                      {achievement.title}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-8 rounded-3xl shadow-lg"
+              {...fadeInRight}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Heart className="text-blue-600" size={28} />
+                その他の肩書き・趣味
+              </h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3">肩書き</h4>
+                  <div className="space-y-2">
+                    <p className="flex items-center gap-2 text-gray-600">
+                      <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                      おばんざいさくら 副代表
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3">趣味</h4>
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                    {['筋トレ', 'MMA', 'サウナ', 'ダイビング', 'サバゲー', '格闘技', 'イベント企画', '散歩'].map((hobby, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 rounded-full text-sm font-medium"
+                      >
+                        {hobby}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-800 via-gray-900 to-blue-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white"
+            {...fadeInUp}
+          >
+            お問い合わせ
+          </motion.h2>
+          
+          <motion.p 
+            className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 px-4"
+            {...fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
+            ビジネスのご相談やイベントの企画など、<br />
+            お気軽にお声がけください
+          </motion.p>
+          
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto"
+            variants={stagger}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.a 
+              href="https://www.instagram.com/marukou0722/"
+              target="_blank"
+              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 lg:p-8 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full hover:scale-105"
+              variants={fadeInUp}
+            >
+              <Instagram className="text-white group-hover:scale-110 transition-transform duration-300 w-6 h-6 lg:w-8 lg:h-8" />
+              <div className="text-left">
+                <p className="text-white font-semibold lg:text-lg">Instagram</p>
+                <p className="text-white/80 text-sm lg:text-base">@marukou0722</p>
+              </div>
+            </motion.a>
+            
+            <motion.a 
+              href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
+              target="_blank"
+              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 lg:p-8 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full hover:scale-105"
+              variants={fadeInUp}
+            >
+              <MapPin className="text-white group-hover:scale-110 transition-transform duration-300 w-6 h-6 lg:w-8 lg:h-8" />
+              <div className="text-left">
+                <p className="text-white font-semibold lg:text-lg">おばんざいさくら</p>
+                <p className="text-white/80 text-sm lg:text-base">店舗にて直接ご相談</p>
+              </div>
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 sm:py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 sm:mb-8 text-gray-800"
+            {...fadeInUp}
+          >
+            アクセス
+          </motion.h2>
+          
+          <motion.div 
+            className="text-center mb-8 sm:mb-12 space-y-4"
+            {...fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900">おばんざいさくら</h3>
+            <div className="space-y-2 text-gray-600">
+              <p className="text-sm sm:text-base">〒160-0022<br /> 東京都新宿区新宿３丁目８−２<br /> クロスビル B1階</p>
+              <p className="text-sm sm:text-base">TEL: <a href="tel:0359258182" className="text-blue-700 hover:underline">03-5925-8182</a></p>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            {...fadeInUp}
+            transition={{ delay: 0.3 }}
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.557028838397!2d139.70190681525644!3d35.687900080192264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd5d6b6aa8d%3A0x6c63d989f4d8a4a2!2z44CSMTY2LTAwMjIg5p2x5Lqs6YO95paw5a6_5Yy65paw5a6_77yT5LiB55uu77yY4oiS77ySIOOCr-ODreOCueODk-ODqyBCMQ!5e0!3m2!1sja!2sjp!4v1639999999999!5m2!1sja!2sjp"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+              title="おばんざいさくら地図"
+            ></iframe>
+          </motion.div>
+
+          <motion.div 
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto"
+            {...fadeInUp}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="bg-gray-50 p-6 rounded-2xl">
+              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <Calendar size={20} className="text-blue-700" />
+                営業時間
+              </h4>
+              <div className="space-y-2 text-gray-600">
+                <p>月〜土: 17:00〜24:00</p>
+                <p>日・祝: 定休日</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-2xl">
+              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <Briefcase size={20} className="text-blue-700" />
+                アクセス
+              </h4>
+              <div className="space-y-2 text-gray-600">
+                <p>JR新宿駅 東口・南口 徒歩3分</p>
+                <p>新宿三丁目駅 徒歩1分</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="mt-6 text-center"
+            {...fadeInUp}
+            transition={{ delay: 0.5 }}
+          >
+            <a 
+              href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
+              target="_blank"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 group w-full sm:w-auto lg:text-lg"
+            >
+              <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span>Google マップで開く</span>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 bg-gray-950 text-center">
+        <p className="text-gray-400 text-sm sm:text-base">
+          &copy; 2024 丸山康太. All rights reserved.
+        </p>
+      </footer>
+    </div>
+  );
+}
