@@ -77,7 +77,7 @@ const stagger = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Dynamic gradient background with mesh pattern */}
@@ -127,7 +127,7 @@ export default function Home() {
           />
         </div>
         
-        <div className="relative z-10 text-center text-white px-4 py-8 md:py-0 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 py-12 sm:py-8 md:py-0 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Profile Image Section */}
             <motion.div 
@@ -197,20 +197,20 @@ export default function Home() {
 
             {/* Text Content Section */}
             <motion.div 
-              className="order-1 lg:order-2 text-left lg:text-left"
+              className="order-1 lg:order-2 text-center lg:text-left"
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
               
               <motion.h1 
-                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight text-white"
                 {...fadeInUp}
                 transition={{ delay: 0.1 }}
               >
                 丸山康太
                 <motion.span 
-                  className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
+                  className="block text-xl sm:text-2xl md:text-2xl lg:text-3xl font-light mt-2 opacity-90"
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
                 >
@@ -219,35 +219,35 @@ export default function Home() {
               </motion.h1>
               
               <motion.div 
-                className="space-y-2 sm:space-y-3 mb-6 sm:mb-8"
+                className="space-y-3 sm:space-y-3 mb-8 sm:mb-8"
                 {...fadeInUp}
                 transition={{ delay: 0.3 }}
               >
-                <p className="text-lg sm:text-xl md:text-2xl font-semibold">
+                <p className="text-xl sm:text-xl md:text-2xl font-semibold">
                   イベント × マーケティング事業
                 </p>
-                <p className="text-base sm:text-lg md:text-xl opacity-90">
+                <p className="text-lg sm:text-lg md:text-xl opacity-90">
                   株式会社Wolf CEO
                 </p>
-                <p className="text-sm sm:text-base md:text-lg opacity-80 max-w-lg">
-                  元警察特殊部隊から起業家へ。<br className="sm:hidden" />
-                  イベント実績100本超<br className="sm:hidden" />
+                <p className="text-base sm:text-base md:text-lg opacity-80 max-w-lg mx-auto lg:mx-0">
+                  元警察特殊部隊から起業家へ。<br />
+                  イベント実績100本超<br />
                   総リーチ3,000万フォロワー
                 </p>
-                <p className="text-xs sm:text-sm md:text-base opacity-70">
+                <p className="text-sm sm:text-sm md:text-base opacity-70">
                   口癖は「伸び代」
                 </p>
               </motion.div>
 
               <motion.div 
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
                 {...fadeInUp}
                 transition={{ delay: 0.5 }}
               >
                 <a 
                   href="https://www.instagram.com/marukou0722/" 
                   target="_blank"
-                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
                 >
                   <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-left">
@@ -258,7 +258,7 @@ export default function Home() {
                 <a 
                   href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic" 
                   target="_blank"
-                  className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                  className="group flex items-center justify-center lg:justify-start gap-3 bg-white/10 backdrop-blur-sm px-6 sm:px-6 py-4 sm:py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 w-full sm:w-auto"
                 >
                   <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-left">
@@ -288,10 +288,10 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
+      <section className="py-16 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
             {...fadeInUp}
           >
             About
@@ -310,24 +310,24 @@ export default function Home() {
               </div>
             </motion.div>
             
-            <motion.div {...fadeInRight} className="space-y-6">
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            <motion.div {...fadeInRight} className="space-y-6 text-center md:text-left">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                 神奈川県出身、東京・新宿在住。1999年生まれ、25歳。
               </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                元警察特殊部隊（18～22歳）を経て、<br className="sm:hidden" />
-                (株)Neptuneにて営業部長として、<br className="sm:hidden" />
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                元警察特殊部隊（18～22歳）を経て、<br />
+                (株)Neptuneにて営業部長として、<br />
                 SNSマーケ・映像スクールの商材販売を担当。
               </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                2024年11月に創業。<br className="sm:hidden" />
-                株式会社Wolf CEOとして、<br className="sm:hidden" />
-                BPO事業（Sales/SNS/建築）、<br className="md:hidden" />
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                2024年11月に創業。<br />
+                株式会社Wolf CEOとして、<br />
+                BPO事業（Sales/SNS/建築）、<br />
                 イベントプロデュース、SaaS事業を主軸に活動中。
               </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                東京タワーイベント主催（6月8日）<br className="sm:hidden" />
-                30万フォロワー連携・<br className="md:hidden" />
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                東京タワーイベント主催（6月8日）<br />
+                30万フォロワー連携・<br />
                 月間100名集客達成
               </p>
             </motion.div>
@@ -336,10 +336,10 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-16 sm:py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
             {...fadeInUp}
           >
             経歴
@@ -386,17 +386,17 @@ export default function Home() {
       </section>
 
       {/* Business Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
             {...fadeInUp}
           >
             事業内容
           </motion.h2>
           
           <motion.div 
-            className="grid md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -443,7 +443,7 @@ export default function Home() {
                   <p className="text-sm font-semibold text-blue-900">250名規模イベント</p>
                   <p className="text-xs text-blue-700 mt-1">東京タワー / トランポランド</p>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="p-3 bg-gray-50 rounded-lg">
                     <p className="text-xs font-semibold text-gray-800">経営者 150名</p>
                     <p className="text-xs text-gray-600 mt-1">総フォロワー3,000万リーチ</p>
@@ -477,17 +477,17 @@ export default function Home() {
       </section>
 
       {/* Advisory Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-16 sm:py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
             {...fadeInUp}
           >
             顧問業
           </motion.h2>
           
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -561,17 +561,17 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
             {...fadeInUp}
           >
             ギャラリー
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -598,16 +598,16 @@ export default function Home() {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-900"
             {...fadeInUp}
           >
             実績
           </motion.h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <motion.div 
               className="bg-white p-8 rounded-3xl shadow-lg"
               {...fadeInLeft}
@@ -653,7 +653,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-800 mb-3">趣味</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                     {['筋トレ', 'MMA', 'サウナ', 'ダイビング', 'サバゲー', '格闘技', 'イベント企画', '散歩'].map((hobby, index) => (
                       <span 
                         key={index}
@@ -671,26 +671,26 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-800 via-gray-900 to-blue-900">
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-gray-800 via-gray-900 to-blue-900">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-8 text-white"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white"
             {...fadeInUp}
           >
             お問い合わせ
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-white/90 mb-12"
+            className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 px-4"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            ビジネスのご相談やイベントの企画など、<br className="sm:hidden" />
+            ビジネスのご相談やイベントの企画など、<br />
             お気軽にお声がけください
           </motion.p>
           
           <motion.div 
-            className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto"
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -699,7 +699,7 @@ export default function Home() {
             <motion.a 
               href="https://www.instagram.com/marukou0722/"
               target="_blank"
-              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group"
+              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full"
               variants={fadeInUp}
             >
               <Instagram className="text-white group-hover:scale-110 transition-transform duration-300" size={24} />
@@ -712,7 +712,7 @@ export default function Home() {
             <motion.a 
               href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
               target="_blank"
-              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group"
+              className="flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 group w-full"
               variants={fadeInUp}
             >
               <MapPin className="text-white group-hover:scale-110 transition-transform duration-300" size={24} />
@@ -726,24 +726,24 @@ export default function Home() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-16 sm:py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 sm:mb-8 text-gray-800"
             {...fadeInUp}
           >
             アクセス
           </motion.h2>
           
           <motion.div 
-            className="text-center mb-12 space-y-4"
+            className="text-center mb-8 sm:mb-12 space-y-4"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-gray-900">おばんざいさくら</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900">おばんざいさくら</h3>
             <div className="space-y-2 text-gray-600">
-              <p className="break-all sm:break-normal">〒160-0022<br className="sm:hidden" /> 東京都新宿区新宿３丁目８−２<br className="sm:hidden" /> クロスビル B1階</p>
-              <p>TEL: <a href="tel:0359258182" className="text-blue-700 hover:underline">03-5925-8182</a></p>
+              <p className="text-sm sm:text-base">〒160-0022<br /> 東京都新宿区新宿３丁目８−２<br /> クロスビル B1階</p>
+              <p className="text-sm sm:text-base">TEL: <a href="tel:0359258182" className="text-blue-700 hover:underline">03-5925-8182</a></p>
             </div>
           </motion.div>
 
@@ -766,7 +766,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="mt-8 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
@@ -801,7 +801,7 @@ export default function Home() {
             <a 
               href="https://maps.app.goo.gl/wx3xBtgNCd27grwz9?g_st=ic"
               target="_blank"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:shadow-lg transition-all duration-300 group"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:shadow-lg transition-all duration-300 group w-full sm:w-auto"
             >
               <MapPin size={20} className="group-hover:scale-110 transition-transform duration-300" />
               <span>Google マップで開く</span>
@@ -812,7 +812,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 px-4 bg-gray-950 text-center">
-        <p className="text-gray-400">
+        <p className="text-gray-400 text-sm sm:text-base">
           &copy; 2024 丸山康太. All rights reserved.
         </p>
       </footer>
