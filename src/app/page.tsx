@@ -153,7 +153,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Image
-                    src="/S__8241389_0.jpg"
+                    src="/kota-profile.jpg"
                     alt="丸山康太"
                     fill
                     className="object-cover"
@@ -301,7 +301,7 @@ export default function Home() {
             <motion.div {...fadeInLeft}>
               <div className="relative w-full max-w-md mx-auto">
                 <Image
-                  src="/kota-about.jpg"
+                  src="/S__8241389_0.jpg"
                   alt="丸山康太"
                   width={400}
                   height={500}
