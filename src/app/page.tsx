@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { Instagram, MapPin, ExternalLink, Calendar, Briefcase, Heart, Trophy } from 'lucide-react';
 import Image from 'next/image';
+import { useRef, useEffect, useState } from 'react';
 
 // 写真データ
 const photos = [
@@ -48,32 +49,211 @@ const achievements = [
   }
 ];
 
-// アニメーション設定
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
+// Custom Hook for Intersection Observer Animation
+function useInViewAnimation(threshold = 0.1) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    threshold, 
+    once: true,
+    margin: "0px 0px -100px 0px"
+  });
+  return { ref, isInView };
+}
 
-const fadeInLeft = {
-  initial: { opacity: 0, x: -60 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
-};
+// Custom Hook for Scroll-Based Animations
+function useScrollAnimation() {
+  const { scrollYProgress } = useScroll();
+  const smoothScrollY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+  return { scrollYProgress, smoothScrollY };
+}
 
-const fadeInRight = {
-  initial: { opacity: 0, x: 60 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
+// PREMIUM ANIMATION VARIANTS
+const premiumVariants = {
+  // Sophisticated reveal animation with spring physics
+  revealUp: {
+    initial: { 
+      opacity: 0, 
+      y: 80,
+      scale: 0.95,
+      filter: "blur(4px)"
+    },
+    animate: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 25,
+        mass: 0.8,
+        duration: 0.9
+      }
+    }
+  },
+  
+  // Premium slide with morphing effect
+  slideReveal: {
+    initial: { 
+      opacity: 0, 
+      x: -60,
+      rotateY: -15,
+      scale: 0.9
+    },
+    animate: { 
+      opacity: 1, 
+      x: 0,
+      rotateY: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 20,
+        mass: 1,
+        duration: 1.2
+      }
+    }
+  },
+  
+  // Sophisticated stagger with elastic bounce
+  staggerContainer: {
+    animate: {
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.2
+      }
+    }
+  },
+  
+  // Premium hover effects
+  premiumHover: {
+    initial: { scale: 1 },
+    hover: {
+      scale: 1.05,
+      y: -8,
+      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 25
+      }
+    },
+    tap: {
+      scale: 0.98,
+      y: -2
+    }
+  },
+  
+  // Text reveal with character stagger
+  textReveal: {
+    initial: { opacity: 0, y: 40 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        damping: 15,
+        mass: 0.8
+      }
+    }
+  },
+  
+  // Image hover with sophisticated transforms
+  imageHover: {
+    initial: { scale: 1, filter: "brightness(1)" },
+    hover: {
+      scale: 1.1,
+      filter: "brightness(1.1)",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30
+      }
+    }
+  },
+  
+  // Morphing button animation
+  morphButton: {
+    initial: { borderRadius: "16px" },
+    hover: {
+      borderRadius: "24px",
+      scale: 1.05,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    },
+    tap: {
+      scale: 0.95,
+      borderRadius: "12px"
     }
   }
 };
+
+// Premium Loading Component
+function PremiumLoader() {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+  
+  return (
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+          initial={{ opacity: 1 }}
+          exit={{ 
+            opacity: 0,
+            scale: 1.1,
+            transition: {
+              duration: 0.8,
+              ease: "easeInOut"
+            }
+          }}
+        >
+          <motion.div
+            className="relative"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 100, 
+              damping: 20 
+            }}
+          >
+            <motion.div
+              className="w-20 h-20 border-4 border-white/20 rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            />
+            <motion.div
+              className="absolute inset-0 w-20 h-20 border-4 border-t-white rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ 
+                duration: 1, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
 
 export default function Home() {
   return (
