@@ -1,1 +1,4 @@
-Deploy trigger: 2025-01-16 premium animations update
+Deploy trigger: 2025-01-16 22:05 JST - ESLint fixes complete
+- Removed useTransform from imports
+- Removed useInViewAnimation, useScrollAnimation, premiumVariants, PremiumLoader
+- Added fadeInUp, fadeInLeft, fadeInRight, stagger definitions
