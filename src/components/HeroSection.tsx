@@ -2,18 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, MapPin, Briefcase, Trophy } from 'lucide-react';
 import Image from 'next/image';
-
-interface AnimationVariant {
-  initial: { opacity: number; y?: number; x?: number };
-  animate: { opacity: number; y?: number; x?: number };
-  transition: { duration: number; delay?: number };
-}
-
-const fadeInUp: AnimationVariant = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
+import { fadeInUp } from '@/lib/animations';
 
 const HeroSection: React.FC = () => {
   return (

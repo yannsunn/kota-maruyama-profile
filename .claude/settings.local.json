@@ -45,6 +45,8 @@
       "Bash(/bin/bash -c \"git status\")",
       "Bash(cd:*)",
       "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
       "Bash(cd:*)"
     ],
     "deny": []

@@ -1,16 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Heart, ExternalLink } from 'lucide-react';
+import { fadeInUp, fadeInLeft, fadeInRight } from '@/lib/animations';
 
 interface Achievement {
   title: string;
   link: string;
-}
-
-interface AnimationVariant {
-  initial: { opacity: number; y?: number; x?: number };
-  animate: { opacity: number; y?: number; x?: number };
-  transition: { duration: number; delay?: number };
 }
 
 // 実績データ
@@ -40,24 +35,6 @@ const achievements: Achievement[] = [
     link: 'https://www.instagram.com/p/C2j7RsPyZIH/?igsh=d3h5aXJsZXYwbWZ3'
   }
 ];
-
-const fadeInUp: AnimationVariant = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const fadeInLeft: AnimationVariant = {
-  initial: { opacity: 0, x: -20 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
-};
-
-const fadeInRight: AnimationVariant = {
-  initial: { opacity: 0, x: 20 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
-};
 
 const AchievementsSection: React.FC = () => {
   return (

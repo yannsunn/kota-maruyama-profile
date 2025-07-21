@@ -1,30 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-interface AnimationVariant {
-  initial: { opacity: number; y?: number; x?: number };
-  animate: { opacity: number; y?: number; x?: number };
-  transition: { duration: number; delay?: number };
-}
-
-const fadeInUp: AnimationVariant = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const fadeInLeft: AnimationVariant = {
-  initial: { opacity: 0, x: -20 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
-};
-
-const fadeInRight: AnimationVariant = {
-  initial: { opacity: 0, x: 20 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
-};
+import { fadeInUp, fadeInLeft, fadeInRight } from '@/lib/animations';
 
 const AboutSection: React.FC = () => {
   return (

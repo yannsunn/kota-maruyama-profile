@@ -46,13 +46,15 @@ const nextConfig: NextConfig = {
   
   // 実験的機能
   experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js'
-        }
+    optimizePackageImports: ['framer-motion', 'lucide-react']
+  },
+  
+  // Turbopack設定（turbopackはNext.js 15で安定版になりました）
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js'
       }
     }
   },

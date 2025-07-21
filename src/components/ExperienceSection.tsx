@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Briefcase, Trophy } from 'lucide-react';
+import { fadeInUp, stagger } from '@/lib/animations';
 
 interface ExperienceItem {
   period: string;
@@ -8,34 +9,6 @@ interface ExperienceItem {
   description: string;
   icon: React.ReactNode;
 }
-
-interface AnimationVariant {
-  initial: { opacity: number; y?: number; x?: number };
-  animate: { opacity: number; y?: number; x?: number };
-  transition: { duration: number; delay?: number };
-}
-
-interface StaggerVariant {
-  animate: {
-    transition: {
-      staggerChildren: number;
-    };
-  };
-}
-
-const fadeInUp: AnimationVariant = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const stagger: StaggerVariant = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
 
 const ExperienceSection: React.FC = () => {
   const experiences: ExperienceItem[] = [
